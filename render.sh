@@ -1,0 +1,1 @@
+docker run -it --rm   --env DISPLAY=$DISPLAY   --env WAYLAND_DISPLAY=$WAYLAND_DISPLAY   --env XDG_RUNTIME_DIR=$XDG_RUNTIME_DIR   --volume /tmp/.X11-unix:/tmp/.X11-unix   --volume /mnt/wslg:/mnt/wslg   --volume "$(pwd)":/app   --ipc=host   dismesh python3 /app/slinky.py --render --young_mod 69e9 --density 9e3 --radius 2e-3 --final_disp 0.0 0.0 0.0

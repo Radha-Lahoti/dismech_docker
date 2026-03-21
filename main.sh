@@ -1,0 +1,1 @@
+docker run --rm --volume "$(pwd)":/app dismesh python3 /app/slinky.py --final_disp -0.1 0.0 -0.05
