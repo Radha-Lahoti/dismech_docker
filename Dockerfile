@@ -20,5 +20,8 @@ RUN git clone https://github.com/mosra/magnum-plugins && cd magnum-plugins && mk
 #ENV MKL_DIR=/opt/intel/oneapi/mkl/2024.2
 ENV MKL_DIR=/opt/intel/oneapi/mkl/latest/lib/cmake/mkl
 RUN apt install -y libpython3-dev python3-pip
-RUN git clone https://github.com/StructuresComp/dismech-rods.git && cd dismech-rods && mkdir build && cd build && cmake -DWITH_MAGNUM=ON -DWITH_PYBIND=ON -DCREATE_EXAMPLES=on .. && make -j4 && cd .. && pip install -e .
+RUN git clone https://github.com/StructuresComp/dismech-rods.git && \
+    cd dismech-rods && mkdir build && cd build && \
+    cmake -DWITH_MAGNUM=OFF -DWITH_PYBIND=ON -DCREATE_EXAMPLES=OFF .. && \
+    make -j1 && cd .. && pip install -e .
 RUN apt install -y python3-numpy

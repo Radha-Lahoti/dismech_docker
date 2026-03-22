@@ -32,7 +32,7 @@ if __name__ == "__main__":
         "--final_disp",
         type=float,
         nargs=3,
-        default=[0.0, 0.0, 0.0],
+        default=[-0.1, 0.0, 0.05],
         help="Final displacement (x y z)",
     )
     args = parser.parse_args()
@@ -141,7 +141,7 @@ if __name__ == "__main__":
         step_until_static()
 
     np.savez(
-        "/app/out.npz",
+        "/workspace/slinky_output/output.npz",
         raw=np.asarray(raw),
         qs=np.asarray(qs),
         idx_b=idx_b,
